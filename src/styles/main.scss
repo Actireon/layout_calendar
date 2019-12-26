@@ -1,1 +1,6 @@
-@import "import/calendar.scss";
+body {
+  margin: 0;
+  font: 30px Arial, sans-serif;
+}
+
+@import "import/_calendar.scss";

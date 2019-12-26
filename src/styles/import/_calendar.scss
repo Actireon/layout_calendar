@@ -1,0 +1,29 @@
+@import "_card-block.scss";
+@import "_variables.scss";
+
+.calendar {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 30px auto;
+  width: 721px;
+
+  @include card-block;
+}
+
+@for $i from 1 through 31 {
+  .calendar > div:nth-child(#{$i})::after {
+    content: "#{$i}";
+  }
+}
+
+@for $i from 1 through 6 {
+  .calendar-#{nth($day, $i)} div:first-child {
+    margin-left: #{100*$i + 3*$i}px;
+  }
+}
+
+@for $i from 28 through 31 {
+  .calendar-#{$i} div:nth-child(-n+#{$i}) {
+    display: block;
+  }
+}
